@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title> poem </title>
+
+	<script type="text/javascript" src="csi/jquery.min.js"></script>
+	<script type="text/javascript" src="csi/jquery-ui-effects.min.js"></script>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8" />
+
+	<script type="text/javascript">
+
+var text = [ "And thursdays, the start of which is like no start. routines.",
+			"The routines used to be sad, they still are though! sadness.",
+			"Hidden sadness still takes breath. the breath as an obsession.",
+			"When obsession is buried under the ashes. The silent funeral.",
+			"When the funeral starts barking, as you're getting somewhere.",
+			"Somewhere where I used to be happy. used to be free. freedom!",
+			"Freedom: a heritage of the seemingly dead past. chew the cud.",
+			"when cuds of your memories blow up form the grave. blandness!",
+			"when blandness seems unpleasant. but nothing is also a value.",
+			"values color our life, even routine life, coding life. loops!",
+			"loops like cycling to overpaint the street in deep blackness.",
+			"black like the cinema screen, the screen itself; black magic!",
+			"magic like the metamorphosis, being surrounded by a feeling.", 
+			"feeling like an insect, and Kafka never gave an explanation.",
+			"Explanation like a sound of pleasure, pleasure, pleasure...", 
+			"Pleasure like what? what like where? where like why? elicit!",
+			"elicit like throwing your pains up, make some space to live.",
+			"live like airplay, screaming loud and loud through the wire.",
+			"wire? wire like... did you hear that? somebody called me “and”.",
+			"And thursdays, the start of which used to be sad somewhere.",
+			"somewhere where it is unpleasant. but nothing is a freedom.",
+			"freedom starts barking. as you breath. heritage of pain.",
+			"chew the pain when blandness feels the sadness of life. airplay!",
+			"airplay?  did you hear? somebody called me “Or”. else “Amir”."
+]
+
+function initPage(){
+	for( var i=0; i<text.length; i++ ){
+		$('body').append( '<br><br><br><h2>[ '+ i+ ' ]</h2>');
+		var temp ="";
+		var tempW=[];
+		if( i === 0 || i === 1 || i === 11 ){
+			for( var j=0; j< text[i].length; j++){
+					var eLe = text[i][j];
+					temp += text[i][j];
+					if ( eLe !== ' ' && j!= (text[i].length - 1) ) $('body').append( '<p>' + temp + ' ...<br></p>');
+				} 
+
+			for( var j=text[i].length; j>0 ; j--){
+				var eLe = text[i][j];
+				if( i === 0 || i === 1 || i === 11 ){
+					temp = text[i].slice(0,j);
+					if ( eLe !== ' ' ) $('body').append( '<p>' + temp + ' ...<br></p>');
+				}
+			}
+		}
+		else if ( i >= 19 && i < 24 ){
+			temp = text[i];
+			$('body').append( '<p>' + temp + ' ...<br></p>');
+		}
+		else{
+			tempW = text[i].split(' ');
+			console.log(tempW.length);
+			for( var j=0; j< tempW.length; j++ ){
+				temp += tempW[j] + " " ;
+				if ( j!= (tempW.length - 1) ) $('body').append( '<p>' + temp + ' ...<br></p>');
+			}
+
+			for( var j=tempW.length; j>0 ; j-- ){
+				tempW.splice(j,1);
+				$('body').append( '<p>' + tempW.join(' ') + ' ...<br></p>');
+			}
+
+		}
+}
+    
+    
+}
+		$( document ).ready( initPage );
+
+	</script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>
